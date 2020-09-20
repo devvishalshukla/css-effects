@@ -1,0 +1,90 @@
+body {
+    background: #dcf5ff;
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    width: 30%;
+    background: white;
+    border-radius: 10px;
+}
+
+.container .inner {
+    background: #00b6ff;
+    padding: 1em;
+    width: 100%;
+    border-radius: 10px;
+    clip-path: circle(10% at 90% 20%);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.container .inner h1{
+    color: white;
+    margin: 0;
+}
+
+.container .inner p{
+    color: white;
+    font-size: .8em;
+}
+
+.container .inner span {
+    float: right;
+    color: white;
+    font-weight: bold;
+    transition: color .5s;
+    position: relative;
+    margin-top: 1%;
+    margin-right: 6%;
+}
+ .inner:hover {
+    clip-path: circle(75%);
+}
+
+.inner:hover span {
+    color: rgba(255, 255, 255, 0);
+}
+
+
+.container .inner1 {
+    background: #00b6ff;
+    padding: 1em;
+    width: 100%;
+    border-radius: 10px;
+    clip-path: inset(0% 0% 0% 90%);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.container .inner1 h1{
+    color: white;
+    margin: 0;
+}
+
+.container .inner1 p{
+    color: white;
+    font-size: .8em;
+}
+
+.container .inner1 span {
+    float: right;
+    color: white;
+    font-weight: bold;
+    transition: color .5s;
+    position: relative;
+    /* margin-top: 3%; */
+    margin-right: 1%;
+}
+ .inner1:hover {
+    clip-path: inset(0% 0% 0% 0%);
+}
+
+.inner1:hover span {
+    color: rgba(255, 255, 255, 0);
+}
