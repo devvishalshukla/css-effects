@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: rgb(36, 40, 49);
+  color: white;
+  display: grid;
+  place-content: center;
+}
+/* img {
+  width: 100%;
+  max-width: 100px;
+} */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  display: flex;
+}
+
+header .activator {
+  padding: 1em;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.activator:hover {
+  background: rgb(30, 33, 41);
+}
+
+nav {
+  background: rgb(46, 41, 56);
+  border-radius: 0 5em 5em 0;
+  padding: 0.5em;
+  clip-path: ellipse(50% 50% at -50% 50%);
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.5em;
+  margin: 0 0.5em;
+  border-radius: 50%;
+  transition: background-color 0.5s;
+}
+
+nav ul li a:hover {
+  background: rgb(50, 56, 68);
+}
+nav ul img {
+  opacity: 0;
+  transform: translateX(-10px);
+}

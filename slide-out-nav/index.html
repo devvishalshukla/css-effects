@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Out Nav</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <img class="activator" id="activator" src="https://s2.svgbox.net/hero-outline.svg?ic=menu-alt-1&color=fff" width="90px"  alt="Hamburger Menu">
+        <nav> 
+            <ul>
+                <li><a href="#" rel="noopener noreferrer"><img src="https://s2.svgbox.net/hero-outline.svg?ic=home&color=805ad5" width="45" height="45"></a></li>
+                <li><a href="#" rel="noopener noreferrer"><img src="https://s2.svgbox.net/hero-outline.svg?ic=annotation&color=805ad5" width="45" height="45"></a></li>
+                <li><a href="#" rel="noopener noreferrer"><img src="https://s2.svgbox.net/hero-outline.svg?ic=bell&color=805ad5" width="45" height="45"></a></li>
+                <li><a href="#" rel="noopener noreferrer"><img src="https://s2.svgbox.net/hero-outline.svg?ic=download&color=805ad5" width="45" height="45"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/CSSRulePlugin.min.js" crossorigin="anonymous"></script>
+
+    <script>
+        const menu = document.querySelector('#activator');
+        const tl = gsap.timeline({defaults : {ease : "power2.inOut"}});
+
+        let toggle = false;
+        function toggleMenu(e) {
+            toggle = !toggle;
+            if(toggle) {
+                e.srcElement.src = 'https://s2.svgbox.net/hero-solid.svg?ic=x&color=fff';
+                tl.play()
+            } else {
+                e.srcElement.src = 'https://s2.svgbox.net/hero-solid.svg?ic=menu-alt-1&color=fff';
+                tl.reverse();
+            }
+        }
+
+        tl.to(`.activator`, {
+            'background' : '#805ad5',
+            'borderRadius' : '5em 0 0 5em'
+        });
+
+        tl.to('nav', {
+            'clipPath' : 'ellipse(100% 100% at 50% 50%)'
+        }, "-=.5");
+
+        tl.to('nav img', {
+            'opacity' : 1,
+            'transform' : 'translateX(0)',
+            stagger: 0.05
+        }, "-=.5");
+        tl.pause();
+        menu.addEventListener('click', toggleMenu)
+    </script>
+</body>
+</html>
